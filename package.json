@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@dwelle/excalidraw": "0.12.0-fork6",
+    "@excalidraw/excalidraw": "0.12.0-08ce7c7",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "http-server": "^14.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -13,9 +16,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:build": "npm run build && npx http-server build -a localhost -p 3004 -o",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "copy-assets-fork": "rm -rf ./public/excalidraw-assets* && cp -r ./node_modules/@dwelle/excalidraw/dist/excalidraw-assets* ./public",
+    "install:excalidraw-fork": "npm i --save-exact @dwelle/excalidraw@latest && npm run copy-assets",
+    "copy-assets-production": "rm -rf ./public/excalidraw-assets* && cp -r ./node_modules/@dwelle/excalidraw/dist/excalidraw-assets* ./public",
+    "install:excalidraw-production": "npm i --save-exact @dwelle/excalidraw@latest && npm run copy-assets"
   },
   "eslintConfig": {
     "extends": [
