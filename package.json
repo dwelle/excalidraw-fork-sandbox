@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "aakansha-excalidraw": "0.12.0-fork7",
     "http-server": "^14.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,9 +22,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "copy-assets-fork": "rm -rf ./public/excalidraw-assets* && cp -r ./node_modules/@dwelle/excalidraw/dist/excalidraw-assets* ./public",
-    "install:excalidraw-fork": "npm i --save-exact @dwelle/excalidraw@latest && npm run copy-assets",
+    "install:excalidraw-fork": "npm i --save-exact @dwelle/excalidraw@latest && npm run copy-assets-fork",
+    "copy-assets-aakansha": "rm -rf ./public/excalidraw-assets* && cp -r ./node_modules/aakansha-excalidraw/dist/excalidraw-assets* ./public",
+    "install:excalidraw-aakansha": "npm i --save-exact aakansha-excalidraw@latest && npm run copy-assets-aakansha",
     "copy-assets-production": "rm -rf ./public/excalidraw-assets* && cp -r ./node_modules/@dwelle/excalidraw/dist/excalidraw-assets* ./public",
-    "install:excalidraw-production": "npm i --save-exact @dwelle/excalidraw@latest && npm run copy-assets"
+    "install:excalidraw-production": "npm i --save-exact @dwelle/excalidraw@latest && npm run copy-assets-production"
   },
   "eslintConfig": {
     "extends": [
